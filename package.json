@@ -1,0 +1,28 @@
+{
+  "name": "transip",
+  "version": "0.0.1",
+  "description": "A node.js wrapper for the TransIP API\"",
+  "main": "lib/transip.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "node lib/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nvansluis/transip.git"
+  },
+  "keywords": [
+    "transip"
+  ],
+  "author": "Niels van Sluis, <niels@ipforward.nl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nvansluis/transip/issues"
+  },
+  "homepage": "https://github.com/nvansluis/transip#readme",
+  "dependencies": {
+    "uniqid": "^5.2.0"
+  }
+}
