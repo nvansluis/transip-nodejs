@@ -6,9 +6,6 @@
   "directories": {
     "lib": "lib"
   },
-  "scripts": {
-    "test": "node lib/test.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nvansluis/transip.git"
