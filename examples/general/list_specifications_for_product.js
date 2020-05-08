@@ -5,9 +5,9 @@ var transip = require('../../lib/transip.js')();
 const config = require('../config.json');
 const demo_token = config.demo_token;
 
-const domainName = 'transipdemo.net';
+const productName = 'vps-bladevps-x4';
 
-transip.dns.list(domainName, demo_token, function(err,response) {
+transip.general.products.retrieve(productName, demo_token, function(err,response) {
   if (err) {
     return console.log(err);
   }

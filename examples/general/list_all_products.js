@@ -5,9 +5,7 @@ var transip = require('../../lib/transip.js')();
 const config = require('../config.json');
 const demo_token = config.demo_token;
 
-const domainName = 'transipdemo.net';
-
-transip.dns.list(domainName, demo_token, function(err,response) {
+transip.general.products.list(demo_token, function(err,response) {
   if (err) {
     return console.log(err);
   }

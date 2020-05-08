@@ -8,15 +8,23 @@ const demo_token = config.demo_token;
 const domainName = 'transipdemo.net';
 
 var params = {
-  dnsEntry: {
-      name: 'www2',
+  dnsEntries: [
+    { 
+      name: 'www',
       expire: 86400,
       type: 'A',
       content: '127.0.0.1',
+    },
+    {
+      name: 'ftp',
+      expire: 300,
+      type: 'A',
+      content: '127.0.0.2',
     }
+  ]
 };
 
-transip.dns.add(params, domainName, demo_token, function(err,response) {
+transip.dns.updateall(params, domainName, demo_token, function(err,response) {
   if (err) {
     return console.log(err);
   }

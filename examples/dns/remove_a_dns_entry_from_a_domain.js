@@ -7,7 +7,16 @@ const demo_token = config.demo_token;
 
 const domainName = 'transipdemo.net';
 
-transip.dns.list(domainName, demo_token, function(err,response) {
+var params = {
+  dnsEntry: {
+      name: 'www',
+      expire: 300,
+      type: 'CNAME',
+      content: '@',
+    }
+};
+
+transip.dns.remove(params, domainName, demo_token, function(err,response) {
   if (err) {
     return console.log(err);
   }

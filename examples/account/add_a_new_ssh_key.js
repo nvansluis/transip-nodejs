@@ -5,9 +5,13 @@ var transip = require('../../lib/transip.js')();
 const config = require('../config.json');
 const demo_token = config.demo_token;
 
-const domainName = 'transipdemo.net';
+var params = {
+  sshKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDf2pxWX/yhUBDyk2LPhvRtI0LnVO8PyR5Zt6AHrnhtLGqK+8YG9EMlWbCCWrASR+Q1hFQG example',
+  description: 'Jim key',
+};
 
-transip.dns.list(domainName, demo_token, function(err,response) {
+
+transip.account.ssh.add(params, demo_token, function(err,response) {
   if (err) {
     return console.log(err);
   }
