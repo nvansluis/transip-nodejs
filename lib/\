@@ -838,35 +838,6 @@ module.exports = function (privateKey, timeout) {
         httpRequest({ method: 'DELETE', path: '/v6/vps/' + vpsName, params: params, token: token }, callback);
       },
 
-      usage: {
-
-        /* Get usage data for a VPS
-         *
-         * @param {Object} params
-         * @param {String} vpsName
-         * @param {String} token
-         * @param {Function} callback
-         * @return {void}
-         */
-        get: function (params, vpsName, token, callback) {
-          httpRequest({ method: 'GET', path: '/v6/vps/' + vpsName + '/usage', params: params, token: token }, callback);
-        },
-      },
-
-      vncdata: {
-
-        /* Get VNC data for a VPS
-         *
-         * @param {String} vpsName
-         * @param {String} token
-         * @param {Function} callback
-         * @return {void}
-         */
-        get: function (vpsName, token, callback) {
-          httpRequest({ method: 'GET', path: '/v6/vps/' + vpsName + '/vnc-data', token: token }, callback);
-        },
-      },
-
       addons: {
 
         /* List all VPSs
