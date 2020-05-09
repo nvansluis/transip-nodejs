@@ -1,8 +1,8 @@
 // requires
-var transip = require('../../lib/transip.js')();
+var transip = require('../../../lib/transip.js')();
 
 // module variables
-const config = require('../config.json');
+const config = require('../../config.json');
 const demo_token = config.demo_token;
 
 transip.account.invoices.list(demo_token, function(err,response) {

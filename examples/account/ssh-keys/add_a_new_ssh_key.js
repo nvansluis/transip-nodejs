@@ -1,8 +1,8 @@
 // requires
-var transip = require('../../lib/transip.js')();
+var transip = require('../../../lib/transip.js')();
 
 // module variables
-const config = require('../config.json');
+const config = require('../../config.json');
 const demo_token = config.demo_token;
 
 var params = {
@@ -11,7 +11,7 @@ var params = {
 };
 
 
-transip.account.ssh.add(params, demo_token, function(err,response) {
+transip.account.sshkeys.add(params, demo_token, function(err,response) {
   if (err) {
     return console.log(err);
   }
