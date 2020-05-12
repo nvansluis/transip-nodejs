@@ -1,5 +1,61 @@
-# TransIP REST API for Node.js
-This repository contains the open source Node.js client for the TransIP REST API. Documentation can be found at: https://api.transip.nl/
+TransIP REST API for Node.js
+============================
 
-## Note
-This is still a work in progress. Some of the API calls have been added. In the examples directory you can find the ones that are working.
+This repository contains the open source Node.js client for the TransIP REST API v6.1.
+
+
+Requirements
+------------
+- Go to https://www.transip.nl/cp/account/api/
+- Create a new Key Pair.
+- Save the private key in a file. e.g. private_key.txt.
+
+
+Usage
+-----
+
+We have put some self-explanatory examples in the *examples* directory, but here is a quick breakdown on how it works.
+Let's go ahead and initialize the library first. Don't forget to add your private key to private_key.txt and replace `<YOUR_USERNAME>` with your own username.
+
+CommonJS require syntax:
+
+```javascript
+var fs = require('fs');
+
+const login = '<YOUR_USERNAME>';
+const label = 'accesstoken1';
+
+const privateKey = fs.readFileSync('./private_key.txt').toString()
+
+var transip = require('./lib/transip.js')(privateKey);
+
+var params = {
+  login: login,
+  label: label,
+  read_only: false,
+  experation_time: '30 minutes',
+  global_key: false
+};
+
+transip.accesstoken.create(params, function(err,response) {
+  if (err) {
+    return console.log(err);
+  }
+
+  if (response.error) {
+    return console.log(response);
+  }
+  else {
+    const token = response.token;
+
+    transip.domains.list(token, function(err,response) {
+      if (err) {
+        return console.log(err);
+      }
+      else {
+        console.log(response);
+      }
+    });
+  }
+});
+```
