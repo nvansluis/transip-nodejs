@@ -11,6 +11,10 @@ Requirements
 - Create a new Key Pair.
 - Save the private key in a file. e.g. private_key.txt.
 
+Installation
+------------
+
+`npm install transip-nodejs`
 
 Usage
 -----
@@ -28,7 +32,7 @@ const label = 'accesstoken1';
 
 const privateKey = fs.readFileSync('./private_key.txt').toString()
 
-var transip = require('./lib/transip.js')(privateKey);
+var transip = require('transip-nodejs')(privateKey);
 
 var params = {
   login: login,
