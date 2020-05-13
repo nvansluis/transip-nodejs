@@ -3,7 +3,7 @@ TransIP REST API for Node.js
 
 This repository contains the open source Node.js client for the TransIP REST API v6.1.
 
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](./LICENSE.md)
 
 Requirements
 ------------
