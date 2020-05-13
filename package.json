@@ -1,6 +1,6 @@
 {
   "name": "transip-nodejs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A node.js wrapper for the TransIP API\"",
   "main": "lib/transip.js",
   "directories": {
